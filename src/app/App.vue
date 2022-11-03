@@ -1,6 +1,16 @@
 <template>
-  <div>
-    <HeaderMenu/>
+  <div :class="$style.root">
+    <div :class="$style.header">
+      <HeaderMenu/>
+    </div>
+
+    <div :class="$style.content">
+      <router-view/>
+    </div>
+
+    <div :class="$style.footer">
+      IM FOOTER
+    </div>
   </div>
 </template>
 
@@ -9,16 +19,44 @@ import { HeaderMenu } from './components/HeaderMenu'
 
 </script>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
+<style module>
+.root {
+  display: grid;
+  grid-template-rows: max-content 1fr max-content;
+  grid-template-areas: 'header' 'body' 'footer';
+  height: 100vh;
+  pointer-events: none;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.header {
+  pointer-events: none;
+
 }
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+
+.footer{
+  height: 80px;
+  width: 100%;
+}
+</style>
+
+<style lang="css">
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#app,
+body,
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  color: red;
+}
+
+a {
+  text-decoration: none;
 }
 </style>

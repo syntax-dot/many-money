@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.root">
-    <div :class="$style.logo"/>
+    <div :class="$style.logo">
+      <h1>Many-Money</h1>
+    </div>
 
     <div :class="$style.navigation">
       <NavigationLink v-for="link in links"
@@ -24,6 +26,21 @@ const links: NavigationLinkProps[] = [
 <style module>
 .root {
   display: grid;
-  grid-template-columns: max-content max-content;
+  grid-auto-flow: column;
+  height: 80px;
+  width: 100%;
+  display: grid;
+  pointer-events: none;
+}
+
+.logo {
+  display: grid;
+  align-items: center;
+}
+
+.navigation{
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
 }
 </style>

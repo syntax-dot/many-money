@@ -9,5 +9,7 @@
 </script>
 
 <style module>
+.root {
 
+}
 </style>
