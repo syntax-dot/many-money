@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.root">
     <div :class="$style.logo">
-      <h1>Many-Money</h1>
+      <h1 @click="router.push('/')">Many-Money</h1>
     </div>
 
     <div :class="$style.navigation">
@@ -14,6 +14,7 @@
 </template>
 
 <script lang="ts" setup>
+import { router } from '../../router'
 import { NavigationLink } from '../NavigationLink'
 import { NavigationLinkProps } from '../NavigationLink/NavigationLink.props'
 
@@ -30,7 +31,6 @@ const links: NavigationLinkProps[] = [
   height: 80px;
   width: 100%;
   display: grid;
-  pointer-events: none;
 }
 
 .logo {
@@ -38,9 +38,17 @@ const links: NavigationLinkProps[] = [
   align-items: center;
 }
 
+.logo > h1 {
+  cursor: pointer;
+  color: #ff8c00;
+  margin: 0 auto;
+}
+
 .navigation{
   display: grid;
   grid-auto-flow: column;
+  grid-gap: 40px;
   align-items: center;
+  margin: 0 auto;
 }
 </style>

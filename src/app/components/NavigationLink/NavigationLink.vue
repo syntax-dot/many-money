@@ -12,10 +12,12 @@ const props = defineProps<NavigationLinkProps>()
 
 <style module>
 .root {
-
+  cursor: pointer;
+  border-bottom: 1px solid rgba(255, 255, 255, 0);
+  transition: all 0.3s ease-in-out;
 }
 
 .root:hover {
-
+  border-bottom: 1px solid rgba(255, 255, 255, 1);
 }
 </style>

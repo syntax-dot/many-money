@@ -1,6 +1,8 @@
 <template>
   <div :class="$style.root">
-    *
+    <div :class="$style.intro">
+      IM INTRO
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,6 @@
 
 <style module>
 .root {
-
+  text-align: center;
 }
 </style>
